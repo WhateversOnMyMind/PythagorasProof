@@ -1,8 +1,9 @@
 # Report: the Pythagorean theorem via the incircle–excircle homothety
 
 **Selected candidate:** C1.
-**Honest novelty rating:** NEW, at low-to-moderate confidence. The conclusion it reaches is
-old, and no published proof was found that uses its mechanism (details in §4 and §5).
+**Honest novelty rating (revised after review):** LIKELY KNOWN as a mechanism. At best it
+is a short route through the standard Heron lemma, not a new mechanism. The first rating
+(NEW, low-to-moderate confidence) is kept in §5 for the record; §5a explains the downgrade.
 **Lean status:** builds with no `sorry`, and the theorem relies only on Lean's standard
 kernel axioms (§7).
 
@@ -132,6 +133,57 @@ B1 mechanism applied to a half-size triangle, so C2 is a pivot-shift of B1.
 The other candidates were rated LIKELY KNOWN, KNOWN, or rejected: C6 was circular and C7
 was a wrapper around A1. Details are in CANDIDATES.md.
 
+## 5a. Revised rating after external review
+
+A reviewer checked the mathematics; it is correct and not circular. The same reviewer
+raised three novelty objections. I followed each one up.
+
+1. **It is the standard Heron lemma.** The step $\frac{r}{s-a}=\frac{r_a}{s}$ is the usual
+   first similarity in the incircle–excircle proof of Heron's formula. C1 takes that
+   general lemma and substitutes the right-triangle radii from (Q). The argument in §5,
+   that C1 is "not Heron plus trivial steps" because it drops Heron's area step and
+   second similarity, is true but weak. A referee can fairly describe C1 as *Heron's
+   proof, specialised*. I agree with that description.
+2. **The identity is published, along with its equivalence to Pythagoras.** For a right
+   triangle, C1's equation $s(s-c)=(s-a)(s-b)$ is $r\,r_c=r_a\,r_b$, because $r_c=s$ and
+   $r_b=s-a$. I verified two papers:
+   - H. L. Price and F. Bernhart, *Pythagorean Triples and a New Pythagorean Theorem*,
+     arXiv:math/0701554 (2007). Their "Circle Theorem" gives $r_1r_4=r_2r_3$ and says
+     "Proof of these claims is elementary".
+   - F. Bernhart and H. L. Price, *Heron's Formula, Descartes Circles, and Pythagorean
+     Triangles*, arXiv:math/0701624 (2007), §2. It writes: "Let the angle at vertex C be a
+     right angle. In other words, the Pythagorean equation holds … (6) is transformed to
+     $r_2\cdot r_3=r_1\cdot r_4$". The same paper gives Heron's formula as
+     $G^2=r_1r_2r_3r_4$.
+
+   Both run in the direction Pythagoras ⇒ identity, and neither contains the homothety
+   derivation. They do show that the facts are well known in exactly this circle setting.
+3. **Unread sources whose titles match closely.** These are now the deciding sources.
+   All are closed access; Unpaywall finds no open copy of any of them.
+   - Okumura, *Math. Gazette* 74.31 (1990), "Incircles and excircles of right-angled
+     triangles", doi 10.2307/3619828.
+   - D. W. Hansen, "On the radii of inscribed and escribed circles of right triangles",
+     *Mathematics Teacher* 72(6) (1979) 462–464, doi 10.5951/mt.72.6.0462. The stage-3
+     search missed it.
+   - The follow-ups to Hansen, found by Crossref: "… — A Second Look", *Two-Year College
+     Math. J.* (1983), doi 10.2307/3026760; and Hansen, *Mathematics Teacher* 96(5) (2003)
+     358, doi 10.5951/mt.96.5.0358.
+
+   If any of these derives $c^2=a^2+b^2$ from the in-/exradii, C1 is KNOWN.
+
+**Cut-the-knot re-check** (on the reviewer's advice). `pythagoras/herons.shtml` (#23) and
+`pythagoras/herons2.shtml` (#75, Loomis algebraic 107, plus the Molokach variant) prove
+Pythagoras from Heron's *formula*: by expanding the product, or by applying it to isosceles
+triangles. Neither uses the excircle homothety or exradii. `Curriculum/Geometry/HeronsFormula.shtml`
+does not mention excircles. So cut-the-knot does not contain C1, but this changes nothing
+in points 1 and 2.
+
+**Revised rating: LIKELY KNOWN as a mechanism.** If the four sources above do not contain
+it, the honest label is *a short, area-free route to Pythagoras through the standard Heron
+homothety lemma, using the fact that a right angle makes both the incircle and the
+$A$-excircle squares at $C$*. It is a pleasant observation, not a new mechanism. **No
+candidate from this run should be presented as a genuinely new proof.**
+
 ## 6. Pipeline summary
 
 | Stage | Output |
@@ -196,6 +248,24 @@ formalization therefore certifies that **the proof is correct relative to these
 classical principles**. It does not derive them from Hilbert's or Tarski's axioms; doing
 so would amount to formalizing the theory of proportion (as GeoCoq does), which is far
 larger than this project.
+
+In plain terms, Lean checks the algebra and the order of the steps. It does **not** check
+that the geometry avoids Pythagoras; that rests on the axioms. A reader should therefore
+confirm that none of the axioms is normally *proved* with Pythagoras:
+
+- **`hl` (HL congruence).** This is the one to watch. Many textbooks prove it from the
+  Pythagorean theorem: "the third sides are $\sqrt{c^2-a^2}$". A Pythagoras-free proof
+  exists in absolute geometry. Place the two triangles on opposite sides of the common
+  leg, so that the hypotenuses form an isosceles triangle. Its base angles are equal
+  (Euclid I.5), and the triangles are then congruent by AAS. Hilbert's axioms suffice
+  for this.
+- **`sim` (AA similarity).** It comes from the theory of proportion and the intercept
+  theorem (Euclid VI.2–4, or Hilbert's segment arithmetic), with no Pythagoras. In
+  Birkhoff's system it is a postulate.
+- **`rect`.** Uses the parallel postulate and congruence only.
+- **`incircle` and `excircle`.** Concurrency of internal and external angle bisectors,
+  together with the feet of perpendiculars. This is neutral geometry.
+- **The ruler and protractor axioms.** Birkhoff's postulates.
 
 ## 8. If C1 turns out to be known: new directions
 

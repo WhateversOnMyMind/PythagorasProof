@@ -211,3 +211,19 @@ runner-up.
   the tangent lengths. **Revised rating for C2: LIKELY KNOWN / borderline.**
 
 **Selection stands: C1.**
+
+### Stage 4 addendum 2 (after external review)
+
+**C1 is downgraded to LIKELY KNOWN as a mechanism.** The full reasoning is in REPORT.md §5a.
+1. C1's similarity $r/(s-a)=r_a/s$ is the standard first lemma of the incircle–excircle
+   proof of Heron's formula. A referee can fairly call C1 "Heron's proof, specialised".
+2. The identity $r\,r_c=r_a\,r_b$ for right triangles, and its equivalence to
+   Pythagoras, are already in print: Price–Bernhart arXiv:math/0701554 (2007) and
+   Bernhart–Price arXiv:math/0701624 (2007) §2. Both derive it from Pythagoras, not the
+   other way round.
+3. The sources that would decide the question are all unread and closed access: Okumura,
+   Gazette 74.31 (1990); Hansen, Math. Teacher 72(6) (1979); its follow-up "A Second Look"
+   (1983); and Hansen, Math. Teacher 96(5) (2003).
+
+The best honest label for C1 is "a short route through the Heron lemma". No candidate in
+this run is rated NEW any more.

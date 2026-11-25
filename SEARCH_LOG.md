@@ -25,3 +25,13 @@ Verified directly by the orchestrator (not just reported by agents):
 - https://archive.org/download/sim_american-mathematical-monthly_1897-01_4_1/sim_american-mathematical-monthly_1897-01_4_1_djvu.txt: read. Y&C XXVI says "EH:ED::HL:DL (See Olney §971) ... (AC+AB−BC)(BC+AB−AC)=(AC+AB+BC)(AC+BC−AB)". The figure uses the circles of XXV (centres A and B).
 
 Blocked or unread (residual novelty risk): Gazette 74.31 (Okumura 1990), 89.21 (Clarke 2005), CMJ "Pythagoras by the Cross Ratio" (2006), Forum Geometricorum (DNS failure), Nelsen PWW II/III contents (403), tandfonline (403 throughout).
+
+## Post-review checks
+- https://www.cut-the-knot.org/pythagoras/herons.shtml (#23): read. Expands Heron's formula; no excircles.
+- https://www.cut-the-knot.org/pythagoras/herons2.shtml (#75): read. Heron's formula on isosceles triangles (Loomis algebraic 107, Posthumus; Molokach variant); no excircles.
+- https://www.cut-the-knot.org/Curriculum/Geometry/HeronsFormula.shtml: fetched. No mention of excircles.
+- https://arxiv.org/pdf/math/0701554 (Price–Bernhart 2007): read. The "Circle Theorem" states $r_1r_4=r_2r_3$, with the remark "Proof of these claims is elementary".
+- https://arxiv.org/pdf/math/0701624 (Bernhart–Price 2007), §2: read. Pythagoras ⇒ $r_2r_3=r_1r_4$; Heron's formula as $G^2=r_1r_2r_3r_4$. Contains no homothety derivation of Pythagoras.
+- Crossref `query.bibliographic=radii inscribed escribed circles right triangles Hansen` returned: 10.5951/mt.72.6.0462 (Hansen 1979), 10.2307/3026760 ("A Second Look", 1983), 10.5951/mt.96.5.0358 (Hansen 2003).
+- Unpaywall (email test@example.org) shows no open copy of 10.5951/mt.72.6.0462, 10.5951/mt.96.5.0358, 10.2307/3026760 or 10.2307/3619828 (Okumura). JSTOR access is needed.
+- arXiv API, abstract queries for excircles / exradii / "escribed circles" with "right triangle": no further relevant hits.
