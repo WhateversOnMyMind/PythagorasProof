@@ -276,3 +276,146 @@ The search covered cut-the-knot and the web, arXiv and Crossref, and Loomis plus
 - **R2-1:** unchanged, LIKELY KNOWN. Heo (2017) confirms that Ptolemy beyond the rectangle is a populated family.
 
 **Final result: nothing NEW.** No candidate is KNOWN verbatim either. The best candidate (C1) is a short converse route through well-documented facts.
+
+---
+
+## Round 3 (volume arguments only)
+
+**Brief.** The quadratic content must come from a 3D volume, not from similarity, area, power
+of a point or projection. Allowed tools: boxes, prisms, pyramids ($V=\tfrac13Bh$ by dissection
+or Cavalieri on parallel sections), additivity, congruence and similarity of solids.
+Reject at once: Cavalieri that reduces to planar area addition; projection onto the triangle's
+plane; any volume formula whose derivation uses the distance formula or the Pythagorean
+theorem (slant heights, space diagonals); prisms over the triangle.
+
+**The five families (from §5b).** Earlier rounds reduced everything to: **A1** altitude
+similarity, **B1/B2** vertex-circle power, **B4** Ptolemy on the rectangle, **E1**
+incircle-and-area, **F** a trigonometric identity. None of the candidates below repeats a
+Round 1 or Round 2 candidate.
+
+**Two screening tests I apply before any search.**
+
+- **Flattening test.** Replace every solid by a planar footprint. If every volume term in
+  the argument has the form (planar area) × (one common height) × (a constant such as $1$,
+  $\tfrac12$, $\tfrac13$, $\tfrac16$), the argument *is* a planar area argument with a
+  harmless factor. By the brief, this is a reject.
+- **Degree test.** Pythagoras has degree 2 in lengths, and a volume identity has degree 3.
+  A volume identity can therefore yield $c^2=a^2+b^2$ only after dividing out one length.
+  If that length is the same in every term, we are back in the flattening test. If it is not
+  the same, we need a second relation between lengths to make the terms comparable, and that
+  relation is itself a planar similarity or area fact.
+
+Notation as before: right angle at $C$, $H$ the foot of the altitude, $h=CH$.
+
+### R3-1. Orthoscheme on the triangle, four faces as bases
+- **Idea.** Erect $BD\perp$ plane $ABC$ with $BD=w$. The chain $A\!-\!C\!-\!B\!-\!D$ has three
+  mutually perpendicular consecutive edges (an orthoscheme), so all four faces are right
+  triangles. Face $ABD$ has legs $c$ and $w$: the hypotenuse appears as a *leg*, so with
+  $w=c$ its area is $\tfrac12c^2$ with no Pythagoras.
+- **Attempt.** $V=\tfrac13\cdot\tfrac12ab\cdot w$ from face $ABC$. From face $ABD$ (right
+  angle at $B$, and plane $ABD\perp$ plane $ABC$) the height of $C$ is the distance from $C$
+  to line $AB$, i.e. $h$. So $V=\tfrac13\cdot\tfrac12cw\cdot h$. Equating: $ab=ch$.
+  Faces $ACD$ and $BCD$ give the same kind of cancellation: the unknown diagonal $CD$
+  appears in both base and height and drops out.
+- **Lemmas.** $V=\tfrac13Bh$; a line perpendicular to two intersecting lines of a plane is
+  perpendicular to the plane; perpendicular planes; the planar altitude relation ($h$ as a
+  height requires the foot $H$).
+- **Audit.** Non-circular, but the *only* output is $ab=ch$, and $h$ enters as a planar
+  altitude. **Flattening test: FAIL.** Every term is $\tfrac{w}{6}\times$ a planar identity.
+
+### R3-2. Pyramids on the three erected squares, common apex
+- **Idea.** Put the squares on $BC$, $CA$, $AB$ and one apex $T$ above the triangle's plane;
+  compare $\mathrm{Vol}(T\text{-}a^2)+\mathrm{Vol}(T\text{-}b^2)$ with $\mathrm{Vol}(T\text{-}c^2)$.
+- **Variant (a): squares in the plane.** Every pyramid has the same height $t$, so the volumes
+  are $\tfrac t3a^2,\tfrac t3b^2,\tfrac t3c^2$ and the claim is the plane area identity times
+  $\tfrac t3$. **Rejected immediately** (cone over a planar region).
+- **Variant (b): vertical squares.** Erect each square perpendicular to the plane. The height
+  of a pyramid is then the distance from the footprint of $T$ to the side's line. For $T$ over
+  $C$: $V=\tfrac13c^2h=\tfrac13abc$ and the two leg pyramids are empty. For $T$ over $A$:
+  only the leg-$a$ square is non-degenerate, giving $\tfrac13a^2b$. Summing over all three
+  sides for a general footprint gives $\tfrac13\sum s_i^2d_i$, and $s_id_i$ is twice a planar
+  sub-triangle area; no relation among $a,b,c$ is forced.
+- **Lemmas.** $V=\tfrac13Bh$; distance from a point to a vertical plane.
+- **Audit.** Non-circular. (a) fails the brief; (b) produces only tautologies
+  ($\tfrac13abc$ twice), and the one relation it uses ($h=ab/c$) is the planar altitude fact.
+
+### R3-3. Twisted prismatoid between the $(a+b)$-square and the inscribed $c$-square ("3D Zhoubi")
+- **Idea.** The only candidate in which the squares on the sides are genuine *faces* of a
+  solid. Let the bottom face be the square of side $a+b$ in the plane $z=0$. Let the top face
+  be the inscribed square of side $c$ at height $H$, rotated so that each top vertex lies
+  directly above a division point of a bottom side (distance $a$ from a corner). The convex
+  hull is a 10-faced solid.
+- **Computation 1 (3D dissection).** The hull is the right prism over the central $c$-square
+  (volume $c^2H$) plus four pieces over the corner right triangles. Each piece is a pyramid
+  with apex at the bottom corner $W$ and the vertical $c\times H$ rectangle over the
+  hypotenuse as base, with height $h$: volume $\tfrac13cHh=\tfrac13abH$. Total
+  $V=H\bigl(c^2+\tfrac43ab\bigr)$.
+- **Computation 2 (prismatoid / Simpson).** $V=\tfrac H6(A_0+4A_m+A_1)$ with $A_0=(a+b)^2$,
+  $A_1=c^2$ and $A_m$ the mid-section, whose area is $\tfrac14\bigl(3(a+b)^2+c^2\bigr)$. Then
+  $V=H\bigl(\tfrac23(a+b)^2+\tfrac13c^2\bigr)$.
+- **Equating.** $\tfrac23(a^2+2ab+b^2)+\tfrac13c^2=c^2+\tfrac43ab$, i.e. $a^2+b^2=c^2$.
+  (Numerically verified, `research/round3/checks.py`: both sides equal the convex-hull
+  volume on random right triangles.)
+- **Lemmas.** $V=\tfrac13Bh$; Simpson/prismatoid formula (Cavalieri with quadratic
+  section areas); the Zhoubi figure (the inscribed square exists, the four triangles are
+  congruent); the planar area of the octagonal mid-section; $ch=ab$ for $h$ in Computation 1.
+- **Audit.** Not circular in form, but **three planar-area facts are doing the work**: the
+  mid-section area $A_m$ (an octagon, computed by planar dissection), the Zhoubi layout
+  itself, and $ch=ab$. **Flattening test: FAIL.** Every term in both computations is
+  $H\times$(planar area)$\times\{1,\tfrac13\}$, and the identity that results is the planar
+  Zhoubi identity $(a+b)^2=c^2+2ab$ (check: $\tfrac23(a+b)^2+\tfrac13c^2=c^2+\tfrac43ab
+  \iff 2(a+b)^2=2c^2+4ab$). Moreover, any dissection of the hull that avoids planar area
+  would have to find new solid pieces, and the hull has no such pieces: its non-prism
+  part is exactly the four $\tfrac13$-wedge pyramids.
+
+### R3-4. Trirectangular tetrahedron, foot of the altitude, then degenerate
+- **Idea.** For a corner $O$ with perpendicular edges $OX=x,OY=y,OZ=z$, prove the 3D identity
+  $\frac1{d^2}=\frac1{x^2}+\frac1{y^2}+\frac1{z^2}$ for the distance $d$ from $O$ to plane
+  $XYZ$ by comparing volumes, then let $z\to0$ or set $z=\infty$ to get $\frac1{h^2}=\frac1{a^2}+\frac1{b^2}$ and hence Pythagoras.
+- **Attempt.** Let $P$ be the foot of the perpendicular from $O$. Splitting $OXYZ$ into
+  $OPXY$, $OPYZ$, $OPZX$ gives $V=\tfrac13\bigl(\tfrac{xy}2p_z+\tfrac{yz}2p_x+\tfrac{zx}2p_y\bigr)$
+  where $p_\bullet$ are the heights of $P$ over the three coordinate faces. That is only the
+  equation $\tfrac{p_x}x+\tfrac{p_y}y+\tfrac{p_z}z=1$ of the plane $XYZ$, which holds for
+  *every* point of the plane. The extra information that makes $P$ the foot (it is the
+  orthocentre of $XYZ$, with $p_\bullet=d^2/\bullet$) needs
+  $|OP|^2=p_x^2+p_y^2+p_z^2$ or the three-perpendiculars theorem with Pythagoras.
+- **Audit.** **REJECTED-CIRCULAR.** The step that selects $P$ uses the space distance
+  formula. Numerical check: $P=d^2(\tfrac1x,\tfrac1y,\tfrac1z)$ is indeed the orthocentre.
+  The $z\to0$ limit also carries no information (first order is $0=0$).
+
+### R3-5. Box with two perpendicular skew face-diagonals
+- **Idea.** In a box $p\times q\times r$ the tetrahedron on two skew diagonals (one in the
+  bottom face, one in the top face) has volume $\tfrac13pqr$ by "box minus four corner
+  tetrahedra", and also $\tfrac16e_1e_2\,r\sin\varphi$ from the opposite-edges formula.
+  Equating gives an area-of-quadrilateral-by-diagonals identity, which for $\varphi=90^\circ$
+  is the orthodiagonal rule (family C6) and would express $e^2$ as $2pq$.
+- **Audit.** The opposite-edges formula is derived by projecting onto a plane perpendicular
+  to the common perpendicular, and the diagonal lengths $e_i=\sqrt{p^2+q^2}$ need the
+  distance formula. **Rejected: projection and circular.** Two diagonals are perpendicular
+  only for $p=q$, which is the isosceles case.
+
+### R3-6. Disphenoid flatness ("Pythagoras is the degeneracy of $V=\tfrac13pqr$")
+- **Idea.** Four congruent triangles with sides $e_1,e_2,e_3$ fold into a tetrahedron
+  inscribed in a $p\times q\times r$ box with $e_1^2=p^2+q^2$ and cyclic. Its volume is
+  $\tfrac13pqr$, and $V=0$ exactly when one box edge is $0$, i.e. when
+  $e_1^2=e_2^2+e_3^2$: the right triangle is the *flat* disphenoid. A right triangle would
+  be characterised by $V=0$.
+- **Audit.** Identifying the box edges, $p^2=\tfrac12(e_1^2+e_3^2-e_2^2)$, is the converse
+  of the space distance formula. The 3D statement "an acute triangle folds into a
+  tetrahedron with box dimensions $p,q,r$" uses Pythagoras in the faces of the box.
+  **REJECTED-CIRCULAR.** (This is the Cayley–Menger idea in disguise.)
+
+### Pre-screen summary
+
+| # | Candidate | Pre-screen result |
+|---|---|---|
+| R3-1 | Orthoscheme, four faces | Survives audit; **flattens** to $ab=ch$ times $\tfrac w6$ |
+| R3-2 | Pyramids on erected squares | (a) rejected by the brief; (b) tautologies |
+| R3-3 | 3D Zhoubi (twisted prismatoid) | Survives audit; **flattens** to the planar Zhoubi identity |
+| R3-4 | Trirectangular tetrahedron | REJECTED-CIRCULAR (space distance formula) |
+| R3-5 | Box with skew face-diagonals | REJECTED (projection, circular) |
+| R3-6 | Disphenoid flatness | REJECTED-CIRCULAR (converse of the space distance formula) |
+
+R3-1, R3-2 and R3-3 go to the novelty search and equivalence check. R3-4, R3-5 and R3-6 are
+searched too, but only to see whether the literature already treats them (for example as a
+known circular argument).
