@@ -140,3 +140,50 @@ where $a=y+r$, $b=x+r$, $c=x+y$.
 
 Going to stage 3 (search): C1, C2, C3, C4, C5, C8, C9.
 Rejected at stage 2: C6 (circular), C7 (wrapper).
+
+---
+
+## Stage 4: equivalence check and ratings (round 1)
+
+Evidence comes from `research/stage3/*.md`, summarised in SEARCH_LOG.md. In all seven
+sources, no item is the SAME as any candidate. The verdicts below therefore turn on
+whether a candidate *reduces* to a known proof.
+
+Key prior art found:
+
+- **Y&C XXVI** (Amer. Math. Monthly 4(1), 1897, p. 11; credited to Olney §971). It
+  derives exactly $(s-a)(s-b)=s(s-c)$ in side form from the harmonic division of line
+  $AB$ by the diameters of the two orthogonal circles centred at $A$ and $B$ through $C$.
+  So **the target identity of C1, C2 and C5 is old**, and so is a harmonic-division route
+  to it. The harmonic fact for orthogonal circles is itself power of a point at a vertex
+  (B2).
+- **Pestich** (CTK Exchange thread 694, 2006, forum post): a circle through $A$, $I$, $B$
+  and intersecting chords give $r\,r_c=(s-a)(s-b)$, then area $=r\,r_c$ is set against
+  $\frac12ab$. Same identity, different circle, and the finish uses area.
+- **Y&C XCVII** (Amer. Math. Monthly 6(3), 1899): the $C$-excircle with the square $s\times s$ at
+  $C$, then an area decomposition.
+- **E1, the incircle with area** (Bauer 1891 per Loomis Fig. 84; Sawyer 1901; Oliver 1997,
+  CTK#42; Rigby; Dulio–Laeng 2019): $r=s-c$ and $rs=\frac12ab$.
+- **Heron's formula via excircles** (classical): its first step is the incircle–excircle
+  homothety $r/(s-a)=r_a/s$ in a *general* triangle. It reaches Pythagoras (CTK#23)
+  only through Heron's formula plus area.
+- **Half-angle tangent proofs (A5)**: CTK#53, #82; Kise et al. 2025 proof 2, which uses
+  $\tan\frac A2=\frac a{b+c}=\frac{c-b}a$.
+- **r + r1 + r2 = h**: a sangaku (Fukagawa–Pedoe), proved *using* Pythagoras on
+  cut-the-knot ("Three incircles in a right triangle"). The page calls it the converse of
+  a Pythagoras proof.
+
+| Cand. | Rating | Justification |
+|---|---|---|
+| **C1** incircle–excircle homothety | **NEW** (moderate confidence) | No source proves Pythagoras from the homothety. Nor does any source use the observation that the right angle makes *both* $CEID$ and $CD'I_aE'$ squares. Reduction tests: (i) Heron's excircle proof contains the homothety, but needs a second similarity, $rr_a=(s-b)(s-c)$, plus area plus Heron's formula; C1 replaces all three with (Q). C1 is therefore not "Heron + trivial steps"; it is a strict shortcut that avoids area completely. (ii) Against A5: both compute $\tan\frac A2$ twice. A5 uses the bisector foot together with the isosceles extension ($\frac a{b+c}$ and $\frac{c-b}a$); C1 uses the tritangent circles ($\frac{s-c}{s-a}$ and $\frac{s-b}{s}$). The two ratios of one proof cannot be obtained from those of the other by a trivial step; they are related only by the mediant rule. (iii) Against Y&C XXVI and Pestich: the conclusion is the same, the mechanism is different (vertex circles or the circle $AIB$ with intersecting chords, versus a homothety of tangent circles). Risk: the figure is classical, so a Gazette or Forum Geometricorum note may exist. Gazette 74.31 (Okumura, "Incircles and excircles of right-angled triangles") could not be read and is the main residual risk. |
+| **C2** power of the incentre | **NEW** (low–moderate confidence) | Not found. It is in mechanism class B3, intersecting chords in the Thales circle. Reduction test: the same two-chord computation at the centre $O$ instead of $I$ gives the short and probably known proof "chord through the midpoint of a leg", $(R-\frac a2)(R+\frac a2)=(\frac b2)^2$. Moving the point from $O$ to $I$ is the kind of pivot-shift the brief warns about. However, the $I$ version needs a genuinely new third chord, $FU^2=xy$, and the tangent lengths, so it is not $O$-version + trivial steps. Its use of the incentre's power is new; the class is crowded. |
+| C3 inscribed square on the hypotenuse | LIKELY KNOWN | Not found as such, but it is a deformation of A1. Replacing the square by an inscribed rectangle gives a one-parameter family whose zero-width member is the altitude proof. This is exactly the pivot-shift pattern. |
+| C4 Pitot trapezoid | LIKELY KNOWN | No Pitot proof was found, but the quadratic content is the similarity $BQP\sim BCA$, used only to replace the area step of E1 ($rs=\frac12ab$). From there it is identical to E1, a 130-year-old proof. |
+| C5 harmonic division | LIKELY KNOWN | The harmonic-division route to the same identity exists (Y&C XXVI, 1897), and "Pythagoras by the Cross Ratio" (Conley–Jaroma, CMJ 2006) could not be read. C5 is also C1's collinearity restated, so it is not a separate mechanism. |
+| C8 $r+r_1+r_2=h$ | KNOWN | The identity is known, and its role as the converse of a Pythagoras proof is noted on cut-the-knot. It uses the altitude similarities (A1) and ends in E1's identity. |
+| C9 $A$-excircle area | KNOWN | This is E1 with the excircle area formula $\Delta=r_a(s-a)$ in place of $\Delta=rs$; Y&C XCVII already does the same with the $C$-excircle. Trivial variant. |
+
+**Outcome of round 1:** two candidates are rated NEW, so no further round is required
+(stage 5). C1 is selected for stage 6. It has the highest confidence and the fewest
+lemmas, it is entirely area-free, and it has the cleanest reduction analysis. C2 is the
+runner-up.
