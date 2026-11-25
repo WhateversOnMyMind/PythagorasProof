@@ -269,3 +269,10 @@ The search covered cut-the-knot and the web, arXiv and Crossref, and Loomis plus
 | R2-3 to R2-8 | KNOWN / REJECTED / FAILS | As pre-screened above. |
 
 **Outcome of round 2: no candidate is NEW.** The main lesson is that every classical synthetic route tried so far is equivalent to A1 (altitude similarity), B1 or B2 (vertex-circle power), B4 (Ptolemy), E1 (incircle and area) or F (trigonometric identities). The equivalence is up to a homothety, a pivot shift, or relabelling an elimination. Novelty at this level of elementary geometry looks exhausted: Loomis's remark that algebraic proofs are "limitless" refers to exactly this kind of recombination.
+
+### Final check against the paywalled sources (all six read)
+- **C1:** stays **LIKELY KNOWN as a mechanism**. No source proves Pythagoras this way. However, Hansen (2003, Theorem 5 and Fig. 4) already has the figure (tritangent centres on the $45°$ lines through $C$) and the collinearity computation, run in the direction Pythagoras ⇒ collinearity. Long (1983, 18*) states the general identity $r_ar_b-rr_c=\frac{a^2+b^2-c^2}{2}$. The honest description of C1 is: *the converse of Hansen's collinearity computation, made synthetic by the Heron homothety lemma*.
+- **C5:** unchanged, LIKELY KNOWN. Conley–Jaroma's cross ratio is Ptolemy on the rectangle, not this harmonic range.
+- **R2-1:** unchanged, LIKELY KNOWN. Heo (2017) confirms that Ptolemy beyond the rectangle is a populated family.
+
+**Final result: nothing NEW.** No candidate is KNOWN verbatim either. The best candidate (C1) is a short converse route through well-documented facts.

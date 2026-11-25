@@ -224,6 +224,27 @@ than similarity, area, or power of a point. The options I see are a solid-geomet
 projections, or a combinatorial/tiling invariant. Otherwise further rounds will
 rediscover recombinations, as Loomis already noted.
 
+## 5c. Final check against the paywalled sources
+
+The user downloaded the six closed-access sources through school JSTOR access, and I read
+all of them (details in SEARCH_LOG.md).
+
+- **Hansen (1979), Long (1983) and Hansen (2003)** use the Pythagorean theorem to derive
+  the radius identities. None proves Pythagoras from them.
+- **Hansen (2003)** is the closest item found. It has C1's figure: the tritangent centres
+  lie on the $45°$ lines through $C$, which is exactly the "squares at $C$". Its Theorem 5
+  (Fig. 4) has C1's collinearity computation, run in the direction Pythagoras ⇒ collinearity.
+- **Long (1983)** states the general identity $r_ar_b-rr_c=rac{a^2+b^2-c^2}{2}$.
+- **Okumura (1990)** is about common tangents and contains no proof.
+- **Heo (2017)** and **Conley–Jaroma (2006)** are Ptolemy-type proofs: on a trapezoid, and
+  on the rectangle via cross ratios. They are related to R2-1 and C5 but are not those
+  candidates.
+
+**Final verdict.** C1 is not published as a proof of Pythagoras, but it is the converse of
+Hansen's 2003 collinearity computation, made synthetic by the standard Heron homothety
+lemma. It stays **LIKELY KNOWN as a mechanism**. It is a short, area-free converse route,
+not a new proof idea. No candidate from either round is NEW.
+
 ## 6. Pipeline summary
 
 | Stage | Output |
