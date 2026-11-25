@@ -227,3 +227,33 @@ runner-up.
 
 The best honest label for C1 is "a short route through the Heron lemma". No candidate in
 this run is rated NEW any more.
+
+---
+
+## Round 2 (stage 5 iteration, started after the external review)
+
+**Lessons from round 1.**
+1. Every round-1 candidate ended at an identity already catalogued for right triangles:
+   $(s-a)(s-b)=s(s-c)$, $r\,r_c=r_a r_b$, or $rs=\frac12ab$. Hansen, Okumura and
+   Price–Bernhart have studied the in-/excircle cluster heavily, so **avoid tangent-length
+   identities altogether**.
+2. A candidate whose lengths are all of the form $b\cdot f(A)$ reduces to a trigonometric
+   identity: half-angle, double-angle, addition. Those are families A5/F, so **avoid
+   bisector and $\tan\frac A2$ figures**.
+3. Moving the point in a power-of-a-point or Ptolemy computation (a "pivot shift") is
+   not new.
+4. **Check novelty at the level of the intermediate identity, not only the figure.**
+
+New notation: $H$ is the foot of the altitude from $C$, with $p=AH$, $q=HB$ and $h=CH$.
+$M_a$, $M_b$, $M_c$ are the midpoints of $BC$, $CA$ and $AB$.
+
+| # | Candidate | Pre-screen (my own reduction test, done before any search) | Status |
+|---|---|---|---|
+| R2-1 | **Ptolemy on the nine-point circle.** For a right triangle, $C, M_b, M_c, H, M_a$ lie on the circle with diameter $CM_c$ (Thales' converse). Assume WLOG $b\ge a$, so the cyclic order is $C, M_b, M_c, H, M_a$. Ptolemy on $C M_b H M_a$ gives $hc=ab$. Ptolemy on $C M_c H M_a$ gives $bh=ap$. Ptolemy on $C M_b M_c H$ gives $ah=bq$. These use $HM_a=\frac a2$ and $HM_b=\frac b2$ (Thales in $CHB$ and $CHA$), the midlines, and $M_cH=\frac{p-q}2$. Then $c=p+q=h\frac{a^2+b^2}{ab}=\frac{a^2+b^2}{c}$. | Survives. **Warning:** its outputs $p=\frac{bh}a$ and $q=\frac{ah}b$ are exactly the altitude-similarity relations of A1, obtained here through Ptolemy instead of similarity. | → search |
+| R2-2 | **Hypotenuse segments from their difference and product.** The power of $M_c$ with respect to the circle on diameter $CA$ is computed two ways: along $AB$ it is $M_cA\cdot M_cH$, and along the line through the centre $M_b$ (with $M_cM_b=\frac a2$) it is $\frac{(b-a)(b+a)}4$. This gives $c(p-q)=b^2-a^2$. Intersecting chords at $H$ in the circumcircle give $pq=h^2$, and the area or kite gives $ch=ab$. Then $(p+q)^2=(p-q)^2+4pq$ gives $c^4=(a^2+b^2)^2$. | Survives. **Warning:** the difference identity is a pivot shift of B1/B2, and $pq=h^2$ is A3. | → search |
+| R2-3 | $A$-Apollonius circle. Its centre $Y$ on $BC$ is where the tangent at $A$ meets $BC$; $Y$ is the midpoint of the internal and external bisector feet, and $YC=\frac{b^2}a$. | $D'C-DC=2YC$ is $\cot\frac A2-\tan\frac A2=2\cot A$, the cotangent double-angle formula. This is F2 (Kise et al.) in disguise. | KNOWN |
+| R2-4 | Brocard point. In a right triangle one Brocard circle is the circle on diameter $CB$, and another, through $C$ and $A$ and tangent to $AB$ at $A$, has diameter $AC_3$ with $C_3$ on line $BC$. | The power of $B$, $c^2=BC\cdot BC_3$, is the tangent–secant theorem in the right triangle $BAC_3$ with altitude $AC$. This is B2/A1. | KNOWN |
+| R2-5 | $C$-mixtilinear incircle: Casey's theorem gives $\rho=\frac{ab}s$, and the incentre-midpoint lemma gives $\rho=2r$. | Casey's theorem is normally proved with $t^2=d^2-(r_1-r_2)^2$, which is circular. The outcome $ab=2rs$ is E1 anyway. | REJECTED-CIRCULAR |
+| R2-6 | Euler line of the isosceles "doubling" triangle $ABB'$, where $B'$ is the reflection of $B$ in $AC$. | Along the axis, Euler's relation is equivalent to the orthocentre-reflection lemma, which reduces to B1: chord $BB'$ is perpendicular to the diameter $AA'$, so $a^2=b\cdot CA'$. | KNOWN |
+| R2-7 | Simson line of $C'$, the reflection of $C$ in $AB$. The Simson segment on the legs has length $PC=2h$. | Its only quadratic content is a similarity that holds whether or not Pythagoras is true. It yields no proof. | FAILS |
+| R2-8 | $\sqrt{bc}$-inversion at $A$, which swaps line $BC$ with the circumcircle. | It only reproduces $AB=\frac{bc}{b}$, which is Thales. No quadratic information. | FAILS |
