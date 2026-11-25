@@ -1,0 +1,16 @@
+# Stage 3 brief: targeted novelty search
+
+We are trying to find out whether any of the candidate proofs of the Pythagorean theorem below are already published. **Search by figure and mechanism, not just by keyword.** For example, look for "excircle" plus "Pythagoras", "exradius" plus "right triangle" plus "proof", "power of the incenter", "inscribed square" plus "hypotenuse" plus "Pythagorean", and "Pitot" plus "Pythagoras". Also look for the key identities: (s-a)(s-b)=s(s-c), r·r_c = r_a·r_b, xy = r(x+y+r), "area of right triangle = product of hypotenuse tangent segments", and r+r1+r2=h.
+
+Notation: right angle at C. Legs a=BC and b=CA, hypotenuse c=AB, s=(a+b+c)/2. The inradius r=s-c, because the incircle and C form a square. The A-excircle has radius r_a=s-b, because it forms a square at C on the other side of CA. The incircle touches AB at F, and x=AF=s-a, y=BF=s-b. Every candidate reduces to the identity (s-a)(s-b)=s(s-c), which is equivalent to a²+b²=c².
+
+Candidates:
+- **C1 (incircle–excircle homothety).** I and I_a both lie on the bisector of angle A. The right triangles A-E-I and A-E'-I_a are similar, where E and E' are the tangency points on line AC. So r/(s-a) = r_a/s, that is (s-c)/(s-a) = (s-b)/s. No area is used.
+- **C2 (power of the incenter with respect to the circle on diameter AB).** Take the chord through I perpendicular to CA. Intersecting chords at E, together with the midline, give power(I) = r·c. Take the chord through I perpendicular to AB at F. FU² = FA·FB = xy gives power(I) = xy - r². So r·c = xy - r².
+- **C3 (inscribed square with one side on the hypotenuse).** The three corner triangles are all similar to ABC. Writing the square's side t two ways gives (b/a + 1 + a/b)t = c along the hypotenuse, and (b/c + c/a)t = b along leg CA. Eliminating t gives c² = a² + b². This needs no altitude and no area.
+- **C4 (Pitot's theorem).** The tangent to the incircle parallel to CA, at distance 2r from it, cuts off a tangential right trapezoid C-A-P-Q. Pitot's theorem CA + PQ = AP + QC, plus similarity, gives ab = r(a+b+c) without using area. Then r = s-c.
+- **C5 (harmonic division).** (A, P; I, I_a) is harmonic, where P is the foot of the bisector from A on BC; this follows from the bisector theorems in triangle ABP. Project onto line CA parallel to CB. The images are b, 0, r and -r_a, so b(r_a - r) = 2 r r_a.
+- **C8 (inradii of the two altitude sub-triangles).** r + r1 + r2 = h comes from tangent lengths. With r1 = rb/c, r2 = ra/c and h = ab/c, this gives r(a+b+c) = ab.
+- **C9 (A-excircle area decomposition).** Area = r_a(s-a) = (s-a)(s-b) = ab/2.
+
+For EACH candidate, return the 3 closest known proofs or results you found. For each one give the link, a one-line core mechanism, and how close it is: SAME, VARIANT or RELATED. Also flag anything that is EXACTLY a candidate. Log every URL and query you tried, whether it succeeded, failed or hit a paywall. Use legal open sources only: the publisher's free pages, arXiv, archive.org, JSTOR's free early journal content, Unpaywall (https://api.unpaywall.org/v2/DOI?email=test@example.org, which rejects example.com addresses), Crossref (https://api.crossref.org/works?query=...), Semantic Scholar (https://api.semanticscholar.org/graph/v1/paper/search?query=...) and web search. Never send any personal information.
