@@ -419,3 +419,48 @@ Notation as before: right angle at $C$, $H$ the foot of the altitude, $h=CH$.
 R3-1, R3-2 and R3-3 go to the novelty search and equivalence check. R3-4, R3-5 and R3-6 are
 searched too, but only to see whether the literature already treats them (for example as a
 known circular argument).
+
+### Round 3: stage 4 equivalence check and ratings
+
+Evidence is in `research/round3/search.md` (Loomis full text, cut-the-knot index and
+generalization pages, web, arXiv, Crossref). **No source contains a volume or solid-geometry
+proof of the planar theorem.** Every 3D hit is the *converse direction* (de Gua's theorem and
+its n-dimensional versions, proved with the 2D theorem, projection or coordinates), Cavalieri
+used *with* Pythagoras (sphere), or planar dissection. So ratings come from reduction.
+
+**R3-3 reduced in detail (the only candidate with a real solid).** Besides Computation 2
+(prismatoid) there is a cleaner second computation using *only* boxes and $V=\tfrac13Bh$:
+
+- Computation 1: hull $=$ prism over the central $c$-square $+$ four wedges, where each wedge
+  $=\tfrac12(a\times b\times H\text{ box})-T$ and $T=\tfrac13\cdot\tfrac{ab}2H$ is the corner
+  tetrahedron. So $V=c^2H+4\bigl(\tfrac12abH-T\bigr)$.
+- Computation 2′: hull $=$ the $(a+b)\times(a+b)\times H$ box $-\,4T$. So $V=(a+b)^2H-4T$.
+- Equating, **$T$ cancels** and so does $H$: $c^2+2ab=(a+b)^2$. That is the planar Zhoubi /
+  Bhaskara identity (family C1, CTK #3, #4, #9), word for word.
+  Verified numerically in `checks.py` ($V$ agrees to all printed digits).
+
+So the solid is decorative. It is the Zhoubi figure extruded to height $H$, with the same
+tetrahedra on both sides. This is the **"3D content cancels"** pattern: whenever a solid
+appears on both sides of the equation, the only information left is the planar identity.
+
+| # | Candidate | Flatten to | Reduces to | Rating |
+|---|---|---|---|---|
+| R3-1 | Orthoscheme, four faces | $ab=ch$ (times $\tfrac w6$) | A1 / area identity of the altitude (E-family, C5 in KNOWN_PROOFS) | **KNOWN** |
+| R3-2 | Pyramids on erected squares | (a) $a^2+b^2=c^2$ times $\tfrac t3$; (b) $abc/3$ twice | (a) area dissection, excluded by the brief; (b) tautology | **KNOWN** (a); **no content** (b) |
+| R3-3 | 3D Zhoubi (twisted prismatoid) | $(a+b)^2=c^2+2ab$ | Zhoubi / Bhaskara (C1); the 3D terms cancel | **KNOWN** as a proof; the packaging (hull of two rotated squares) was not found, but it adds nothing |
+| R3-4 | Trirectangular tetrahedron | — | circular: de Gua's proofs use the 2D theorem (CTK Generalization page; Whitney 2022 says so explicitly) | **REJECTED-CIRCULAR** (literature-confirmed) |
+| R3-5 | Box with skew face-diagonals | orthodiagonal area (C6) | projection, plus the distance formula | **REJECTED** |
+| R3-6 | Disphenoid flatness | — | converse of the space distance formula (Cayley–Menger) | **REJECTED-CIRCULAR** |
+
+**Outcome of round 3: no candidate is NEW.** There is nothing to formalize in Lean.
+
+**Two structural reasons, recorded for REPORT §6.**
+1. *Similarity of solids scales volume by $k^3$.* A solid cut into two pieces similar to
+   itself with ratios $k_1,k_2$ gives $k_1^3+k_2^3=1$, not $k_1^2+k_2^2=1$. A volume route to
+   a degree-2 identity therefore needs a direction along which nothing scales (a common
+   height $H$), and that is a cylinder or cone over a planar region.
+2. *Every non-circular volume formula in the allowed toolbox factors through planar area.*
+   $V=\tfrac13Bh$ and box volumes are (planar area)×(perpendicular length), and the
+   perpendicular length is the same in every term of a valid identity (or it is related to the
+   others by a planar similarity). Hence 3D adds a constant factor ($1,\tfrac12,\tfrac13,
+   \tfrac16$) and no new quadratic source.

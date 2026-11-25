@@ -30,3 +30,18 @@ for _ in range(5):
     p,q,r = a,b,w
     T=[(0,0,0),(p,q,0),(p,0,r),(0,q,r)]
     print(f"R3-5/6 disphenoid V={vol(T):.6f} pqr/3={p*q*r/3:.6f}")
+
+# R3-3, computation 2': hull = box (a+b)x(a+b)xH minus four corner tetrahedra W_b W_t Q_t Q'_t.
+# Each tetrahedron has volume (1/3)(ab/2)H.  Equating with computation 1 cancels every 1/3-term:
+#   c^2 H + 4*(abH/2 - abH/6)  ==  (a+b)^2 H - 4*abH/6   <=>  c^2 = a^2 + b^2  (the planar Zhoubi identity)
+print("--- R3-3 computation 2' ---")
+for _ in range(3):
+    a, b, H = [random.uniform(1, 6) for _ in range(3)]
+    c2 = a*a + b*b; s = a + b
+    bot = [(0,0,0),(s,0,0),(s,s,0),(0,s,0)]; top = [(a,0,H),(s,a,H),(b,s,H),(0,b,H)]
+    V = vol(bot+top)
+    box_minus = s*s*H - 4*(a*b/2*H/3)
+    comp1 = c2*H + 4*(a*b*H/2 - a*b*H/6)
+    # explicit corner tetrahedron at corner (0,0): W_b=(0,0,0), W_t=(0,0,H), Q_t=(a,0,H), Q'_t=(0,b,H)
+    tet = vol([(0,0,0),(0,0,H),(a,0,H),(0,b,H)])
+    print(f"hull={V:.6f} box-minus-4tets={box_minus:.6f} comp1={comp1:.6f} tet={tet:.6f} abH/6={a*b*H/6:.6f}")
