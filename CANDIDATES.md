@@ -187,3 +187,27 @@ Key prior art found:
 (stage 5). C1 is selected for stage 6. It has the highest confidence and the fewest
 lemmas, it is entirely area-free, and it has the cleanest reduction analysis. C2 is the
 runner-up.
+
+### Stage 4 addendum (after the arXiv agent's late report)
+
+- **C1 against CTK #82** (Yanney–Calderhead, Amer. Math. Monthly 3, 1896; re-sent by Ryoo
+  in 2009; Kise et al. 2025 §3 is essentially the same). In #82, $P$ is the foot of the
+  $A$-bisector on $BC$. The circle centred at $P$ is tangent to $AC$ at $C$ and to $AB$ at
+  $E$, with $AE=b$ and $PC=PE=x$. The bisector theorem gives $x=\frac{ab}{b+c}$. **The
+  quadratic step is $\triangle BEP\sim\triangle BCA$ (common angle $B$)**, so
+  $\frac{c-b}{a}=\frac{x}{b}$.
+  C1 also uses a circle inscribed in angle $A$. In fact $P$'s circle, the incircle and the
+  $A$-excircle are all homothetic from $A$. But **C1's quadratic step is the homothety
+  between two of those circles (common angle $\frac A2$)**, and their radii are pinned down
+  by the right-angle squares (Q). C1 has no counterpart of #82's angle-$B$ similarity, and
+  #82 has no counterpart of (Q) for an excircle. Neither proof contains the other, and the
+  two are not related by a trivial step. They do belong to the same broad
+  "bisector of $A$ / $\tan\frac A2$" family (A5).
+  **Revised rating for C1: NEW, low–moderate confidence. Closest prior work: CTK #82.**
+- **C2 re-examined.** Its "centre version" (the same two-chord computation at $O$) is
+  exactly B1 (CTK #11, perpendicular chord at a point of a diameter) applied to the
+  half-size triangle $ON_bC$. So C2 is a pivot-shift, from $O$ to $I$, of a known
+  mechanism. The shift is not trivial, because it needs the third chord $FU^2=xy$ and
+  the tangent lengths. **Revised rating for C2: LIKELY KNOWN / borderline.**
+
+**Selection stands: C1.**
