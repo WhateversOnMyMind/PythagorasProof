@@ -184,6 +184,46 @@ homothety lemma, using the fact that a right angle makes both the incircle and t
 $A$-excircle squares at $C$*. It is a pleasant observation, not a new mechanism. **No
 candidate from this run should be presented as a genuinely new proof.**
 
+## 5b. Round 2 (after the review): no NEW candidate
+
+Round 2 applied the lessons of round 1. It avoided the in-/excircle cluster and the
+half-angle family, and it checked novelty at the level of the intermediate identity. Eight
+candidates were proposed (CANDIDATES.md, Round 2), and six were eliminated by my own
+reduction tests before any search:
+
+| Candidate | Reduces to |
+|---|---|
+| Apollonius circle | cotangent double-angle formula |
+| Brocard point | tangent–secant |
+| Mixtilinear incircle | Casey's theorem, circular |
+| Euler line | chord proof B1 |
+| Simson line | no quadratic content |
+| √bc-inversion | no quadratic content |
+
+The two survivors were searched across cut-the-knot and the web, arXiv and Crossref, and
+Loomis plus all of Yanney–Calderhead. Neither was found, but both reduce to known proofs:
+
+- **R2-1 (Ptolemy on the nine-point circle).** The homothety at $C$ with ratio ½ turns it
+  into Ptolemy on the circumcircle with the antipode and the reflection of $C$. That is a
+  pivot of the rectangle proof (CTK #21; Loomis 63–68). Its outputs are the altitude
+  relations. **LIKELY KNOWN.**
+- **R2-2 (difference and product of the hypotenuse segments).** The difference identity
+  $c(p-q)=b^2-a^2$ is Krueger's (1746; Loomis 72, Y&C XXII). The product $pq=h^2$ is
+  Hoffmann's (1818). Only the elimination $(p+q)^2=(p-q)^2+4pq$ is new, and that is a
+  trivial recombination. **LIKELY KNOWN.**
+
+**Conclusion after two rounds.** Nothing has survived as genuinely new. All 17 candidates
+reduce, after a homothety, a pivot shift or an algebraic elimination, to the altitude
+similarity, vertex-circle power, Ptolemy on the rectangle, the incircle-and-area proof, or
+a trigonometric identity. The remaining unread sources (Okumura 1990, Hansen 1979/83/2003,
+Heo 2017, Tran 2023, Conley–Jaroma 2006) need library access.
+
+A third round is worthwhile only with a **different quadratic source**: something other
+than similarity, area, or power of a point. The options I see are a solid-geometry
+(volume) argument, a measure-theoretic or probabilistic argument that does not collapse to
+projections, or a combinatorial/tiling invariant. Otherwise further rounds will
+rediscover recombinations, as Loomis already noted.
+
 ## 6. Pipeline summary
 
 | Stage | Output |

@@ -35,3 +35,10 @@ Blocked or unread (residual novelty risk): Gazette 74.31 (Okumura 1990), 89.21 (
 - Crossref `query.bibliographic=radii inscribed escribed circles right triangles Hansen` returned: 10.5951/mt.72.6.0462 (Hansen 1979), 10.2307/3026760 ("A Second Look", 1983), 10.5951/mt.96.5.0358 (Hansen 2003).
 - Unpaywall (email test@example.org) shows no open copy of 10.5951/mt.72.6.0462, 10.5951/mt.96.5.0358, 10.2307/3026760 or 10.2307/3619828 (Okumura). JSTOR access is needed.
 - arXiv API, abstract queries for excircles / exradii / "escribed circles" with "right triangle": no further relevant hits.
+
+## Round 2 (targeted search for R2-1 and R2-2)
+The logs are in `research/round2/`:
+- `cutttheknot_web.md`: cut-the-knot index (no "nine-point"; Ptolemy only in #21) and #11, #22, #43, #59–#61, #71, #79, #105 read. Closest: #59/#60 (Y&C XVII/XVIII, the difference identity from a circle centred at $C$).
+- `loomis_monthly.md`: Loomis circle and mean-proportional proofs read; all Y&C installments (proofs I–C) read. Closest: Krueger 1746 (Loomis 72, Y&C XXII, gives $c(p-q)=b^2-a^2$ with the midpoint); Hoffmann 1818 (Loomis 16/53, $pq=h^2$); Halsted/Runkle (Loomis 63–68, Ptolemy on the circumcircle). Not read: Lehman, Monthly vol. 6 p. 228.
+- `arxiv_crossref.md`: arXiv abstract search and Crossref title search; 13 arXiv full texts read. Closed and unread: Heo, Math. Mag. 2017 ("PWW: Pythagorean theorem via Ptolemy"); Tran, Math. Mag. 2023; Grzesik, Amer. Math. Monthly 2025.
+- A Sci-Hub MCP server was suggested for paywalled papers. **I declined it**: it serves copyrighted papers without authorization, and the brief limits the search to legal open sources. All paywalled items remain listed as unread.
